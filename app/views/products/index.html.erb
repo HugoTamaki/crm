@@ -1,16 +1,15 @@
-<div class="container">
-  <h1>Teste</h1>
+<h1>Teste</h1>
 
-  <table class="table">
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= link_to product.name, product %></td>
-        <td><%= link_to "Editar", edit_product_path(product) %></td>
-      </tr>
-    <% end %>
-  </table>
+<table class="table">
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= link_to product.name, product %></td>
+      <td><%= link_to "Editar", edit_product_path(product) %></td>
+      <td><%= link_to "Deletar", product, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+    </tr>
+  <% end %>
+</table>
 
-  <p>
-    <%= link_to "Criar produto", new_product_path  %>
-  </p>
-</div>
+<p>
+  <%= link_to "Criar produto", new_product_path  %>
+</p>
