@@ -1,9 +1,10 @@
-<h1>Teste</h1>
+<h1>Produtos</h1>
 
 <table class="table">
   <% @products.each do |product| %>
     <tr>
       <td><%= link_to product.name, product %></td>
+      <td><%= product.company.name if product.company %></td>
       <td><%= link_to "Editar", edit_product_path(product) %></td>
       <td><%= link_to "Deletar", product, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
     </tr>

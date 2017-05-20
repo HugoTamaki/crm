@@ -9,7 +9,8 @@
   <% end %>
 
   <%= f.input :name %>
+  <%= f.input :company_id, collection: Company.all, value_method: :id, label: "Empresa", include_blank: true %>
   <%= f.input :description %>
 
-  <%= f.submit %>
+  <%= f.button :submit %>
 <% end %>
