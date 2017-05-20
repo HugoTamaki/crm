@@ -1,11 +1,14 @@
 <div class="container">
   <h1>Teste</h1>
 
-  <ul>
+  <table class="table">
     <% @products.each do |product| %>
-      <li><%= product.name %></li>
+      <tr>
+        <td><%= link_to product.name, product %></td>
+        <td><%= link_to "Editar", edit_product_path(product) %></td>
+      </tr>
     <% end %>
-  </ul>
+  </table>
 
   <p>
     <%= link_to "Criar produto", new_product_path  %>
