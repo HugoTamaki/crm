@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Teste</h1>
+
+  <ul>
+    <% @products.each do |product| %>
+      <li><%= product.name %></li>
+    <% end %>
+  </ul>
+
+  <p>
+    <%= link_to "Criar produto", new_product_path  %>
+  </p>
+</div>
